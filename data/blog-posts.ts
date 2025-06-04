@@ -36,7 +36,7 @@ export const mockBlogPosts: BlogPost[] = [
     excerpt:
       "Our analysis of millions of fact-checks reveals emerging patterns in how misinformation spreads across platforms and demographics.",
     content: "Full content would go here...",
-    coverImage: "/placeholder.svg?height=400&width=800",
+    coverImage: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "May 28, 2024",
     author: authors.sarah,
     category: "research",
@@ -49,7 +49,7 @@ export const mockBlogPosts: BlogPost[] = [
     excerpt:
       "Exploring the ethical considerations and responsibilities when deploying AI systems for fact-checking at scale.",
     content: "Full content would go here...",
-    coverImage: "/placeholder.svg?height=400&width=800",
+    coverImage: "https://images.pexels.com/photos/8438958/pexels-photo-8438958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "May 20, 2024",
     author: authors.aisha,
     category: "research",
@@ -62,7 +62,7 @@ export const mockBlogPosts: BlogPost[] = [
     excerpt:
       "We're excited to announce our new API that allows developers to integrate our fact-checking technology into their applications.",
     content: "Full content would go here...",
-    coverImage: "/placeholder.svg?height=400&width=800",
+    coverImage: "https://images.pexels.com/photos/7988079/pexels-photo-7988079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "May 15, 2024",
     author: authors.marcus,
     category: "company",
@@ -75,7 +75,7 @@ export const mockBlogPosts: BlogPost[] = [
     excerpt:
       "How our new computer vision models can identify manipulated images and videos with unprecedented accuracy.",
     content: "Full content would go here...",
-    coverImage: "/placeholder.svg?height=400&width=800",
+    coverImage: "https://images.pexels.com/photos/8875643/pexels-photo-8875643.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "May 10, 2024",
     author: authors.aisha,
     category: "research",
@@ -87,7 +87,7 @@ export const mockBlogPosts: BlogPost[] = [
     title: "OLA.AI Partners with Schools to Promote Media Literacy",
     excerpt: "Our new educational initiative aims to teach students how to critically evaluate online information.",
     content: "Full content would go here...",
-    coverImage: "/placeholder.svg?height=400&width=800",
+    coverImage: "https://images.pexels.com/photos/7596913/pexels-photo-7596913.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "May 5, 2024",
     author: authors.james,
     category: "company",
@@ -100,7 +100,7 @@ export const mockBlogPosts: BlogPost[] = [
     excerpt:
       "How we're ramping up our systems to handle the increased demand for fact-checking during election periods.",
     content: "Full content would go here...",
-    coverImage: "/placeholder.svg?height=400&width=800",
+    coverImage: "https://images.pexels.com/photos/4669113/pexels-photo-4669113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "April 28, 2024",
     author: authors.marcus,
     category: "industry",
@@ -113,7 +113,7 @@ export const mockBlogPosts: BlogPost[] = [
     excerpt:
       "Our research team's findings on how health misinformation affects decision-making and public health outcomes.",
     content: "Full content would go here...",
-    coverImage: "/placeholder.svg?height=400&width=800",
+    coverImage: "https://images.pexels.com/photos/7715269/pexels-photo-7715269.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "April 22, 2024",
     author: authors.sarah,
     category: "research",
@@ -126,7 +126,7 @@ export const mockBlogPosts: BlogPost[] = [
     excerpt:
       "Practical tips for journalists and researchers on how to streamline their fact-checking process using OLA.AI.",
     content: "Full content would go here...",
-    coverImage: "/placeholder.svg?height=400&width=800",
+    coverImage: "https://images.pexels.com/photos/9035000/pexels-photo-9035000.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "April 15, 2024",
     author: authors.james,
     category: "tutorials",
@@ -139,7 +139,7 @@ export const mockBlogPosts: BlogPost[] = [
     excerpt:
       "We're thrilled to announce our Series B funding round, led by Tech Ventures, to accelerate our international expansion.",
     content: "Full content would go here...",
-    coverImage: "/placeholder.svg?height=400&width=800",
+    coverImage: "https://images.pexels.com/photos/5912588/pexels-photo-5912588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "April 10, 2024",
     author: authors.sarah,
     category: "company",
@@ -151,7 +151,7 @@ export const mockBlogPosts: BlogPost[] = [
     title: "Breaking Language Barriers: Multilingual Fact-Checking at Scale",
     excerpt: "How our new language models enable accurate fact-checking across 25+ languages and cultural contexts.",
     content: "Full content would go here...",
-    coverImage: "/placeholder.svg?height=400&width=800",
+    coverImage: "https://images.pexels.com/photos/30917907/pexels-photo-30917907/free-photo-of-scrabble-tiles-forming-words-guide-and-news.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "April 5, 2024",
     author: authors.aisha,
     category: "research",
@@ -163,7 +163,7 @@ export const mockBlogPosts: BlogPost[] = [
     title: "The Psychology of Misinformation: Why We Believe False Claims",
     excerpt: "Understanding the cognitive biases and psychological factors that make us susceptible to misinformation.",
     content: "Full content would go here...",
-    coverImage: "/placeholder.svg?height=400&width=800",
+    coverImage: "https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "March 28, 2024",
     author: authors.james,
     category: "industry",
@@ -176,7 +176,7 @@ export const mockBlogPosts: BlogPost[] = [
     excerpt:
       "A technical tutorial on implementing our API to add real-time fact-checking capabilities to your platform.",
     content: "Full content would go here...",
-    coverImage: "/placeholder.svg?height=400&width=800",
+    coverImage: "https://images.pexels.com/photos/10816120/pexels-photo-10816120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "March 20, 2024",
     author: authors.marcus,
     category: "tutorials",
