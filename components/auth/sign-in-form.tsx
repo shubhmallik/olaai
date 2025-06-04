@@ -1,50 +1,50 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Eye, EyeOff, Mail, Lock } from "lucide-react"
-import { useAuth } from "@/contexts/auth-context"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Eye, EyeOff, Mail, Lock } from "lucide-react";
+import { useAuth } from "@/contexts/auth-context";
 
 interface SignInFormProps {
-  onSuccess?: () => void
-  onSwitchToSignUp?: () => void
+  onSuccess?: () => void;
+  onSwitchToSignUp?: () => void;
 }
 
 export function SignInForm({ onSuccess, onSwitchToSignUp }: SignInFormProps) {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [showPassword, setShowPassword] = useState(false)
-  const [error, setError] = useState("")
-  const { signIn, isLoading } = useAuth()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
+  const { signIn, isLoading } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setError("")
+    e.preventDefault();
+    setError("");
 
     if (!email || !password) {
-      setError("Please fill in all fields")
-      return
+      setError("Please fill in all fields");
+      return;
     }
 
-    const result = await signIn(email, password)
+    const result = await signIn(email, password);
     if (result.success) {
-      onSuccess?.()
+      onSuccess?.();
     } else {
-      setError(result.error || "Sign in failed")
+      setError(result.error || "Sign in failed");
     }
-  }
+  };
 
   return (
     <Card className="w-full max-w-md">
       <CardHeader className="text-center">
         <CardTitle className="text-2xl">Welcome back</CardTitle>
-        <p className="text-slate-600">Sign in to your OLA.AI account</p>
+        <p className="text-slate-600">Sign in to your OLAAI account</p>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -90,7 +90,11 @@ export function SignInForm({ onSuccess, onSwitchToSignUp }: SignInFormProps) {
                 className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8 p-0"
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                {showPassword ? (
+                  <EyeOff className="h-4 w-4" />
+                ) : (
+                  <Eye className="h-4 w-4" />
+                )}
               </Button>
             </div>
           </div>
@@ -107,12 +111,16 @@ export function SignInForm({ onSuccess, onSwitchToSignUp }: SignInFormProps) {
         <div className="mt-6 text-center">
           <p className="text-sm text-slate-600">
             Don't have an account?{" "}
-            <Button variant="link" className="p-0 h-auto" onClick={onSwitchToSignUp}>
+            <Button
+              variant="link"
+              className="p-0 h-auto"
+              onClick={onSwitchToSignUp}
+            >
               Sign up
             </Button>
           </p>
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

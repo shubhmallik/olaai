@@ -1,52 +1,55 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Shield, Zap, Eye, ChevronRight, ChevronLeft } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Shield, Zap, Eye, ChevronRight, ChevronLeft } from "lucide-react";
 
 interface MobileOnboardingProps {
-  onComplete: () => void
+  onComplete: () => void;
 }
 
 const onboardingSteps = [
   {
     icon: <Shield className="h-16 w-16 text-blue-600" />,
-    title: "Welcome to OLA.AI",
-    description: "Your pocket fact-checker powered by AI. Verify claims instantly with trusted sources.",
+    title: "Welcome to OLAAI",
+    description:
+      "Your pocket fact-checker powered by AI. Verify claims instantly with trusted sources.",
     image: "/placeholder.svg?height=200&width=300",
   },
   {
     icon: <Zap className="h-16 w-16 text-green-600" />,
     title: "Instant Verification",
-    description: "Get fact-check results in seconds. Simply type, paste, or speak your claim.",
+    description:
+      "Get fact-check results in seconds. Simply type, paste, or speak your claim.",
     image: "/placeholder.svg?height=200&width=300",
   },
   {
     icon: <Eye className="h-16 w-16 text-purple-600" />,
     title: "Transparent Results",
-    description: "See exactly how we reached our verdict with source links and confidence scores.",
+    description:
+      "See exactly how we reached our verdict with source links and confidence scores.",
     image: "/placeholder.svg?height=200&width=300",
   },
-]
+];
 
 export function MobileOnboarding({ onComplete }: MobileOnboardingProps) {
-  const [currentStep, setCurrentStep] = useState(0)
+  const [currentStep, setCurrentStep] = useState(0);
 
   const nextStep = () => {
     if (currentStep < onboardingSteps.length - 1) {
-      setCurrentStep(currentStep + 1)
+      setCurrentStep(currentStep + 1);
     } else {
-      onComplete()
+      onComplete();
     }
-  }
+  };
 
   const prevStep = () => {
     if (currentStep > 0) {
-      setCurrentStep(currentStep - 1)
+      setCurrentStep(currentStep - 1);
     }
-  }
+  };
 
-  const step = onboardingSteps[currentStep]
+  const step = onboardingSteps[currentStep];
 
   return (
     <div className="h-full flex flex-col">
@@ -71,7 +74,9 @@ export function MobileOnboarding({ onComplete }: MobileOnboardingProps) {
 
         {/* Text Content */}
         <h1 className="text-2xl font-bold text-slate-800 mb-4">{step.title}</h1>
-        <p className="text-slate-600 text-lg leading-relaxed mb-8">{step.description}</p>
+        <p className="text-slate-600 text-lg leading-relaxed mb-8">
+          {step.description}
+        </p>
 
         {/* Progress Dots */}
         <div className="flex gap-2 mb-8">
@@ -105,5 +110,5 @@ export function MobileOnboarding({ onComplete }: MobileOnboardingProps) {
         </Button>
       </div>
     </div>
-  )
+  );
 }

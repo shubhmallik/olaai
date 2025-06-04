@@ -1,19 +1,34 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { ArrowLeft, Shield, Search, Calendar, ChevronRight, Tag, Clock, Filter, ArrowRight } from "lucide-react"
-import { BlogPostCard } from "@/components/pages/blog/blog-post-card"
-import { mockBlogPosts } from "@/data/blog-posts"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  ArrowLeft,
+  Shield,
+  Search,
+  Calendar,
+  ChevronRight,
+  Tag,
+  Clock,
+  Filter,
+  ArrowRight,
+} from "lucide-react";
+import { BlogPostCard } from "@/components/pages/blog/blog-post-card";
+import { mockBlogPosts } from "@/data/blog-posts";
 
 interface BlogListingProps {
-  onBack?: () => void
-  onViewPost: (slug: string) => void
+  onBack?: () => void;
+  onViewPost: (slug: string) => void;
 }
 
 // Categories for blog posts
@@ -23,7 +38,7 @@ const categories = [
   { id: "research", name: "Research" },
   { id: "industry", name: "Industry" },
   { id: "tutorials", name: "Tutorials" },
-]
+];
 
 // Tags for filtering
 const popularTags = [
@@ -34,39 +49,40 @@ const popularTags = [
   "Case Studies",
   "Media Literacy",
   "Technology",
-]
+];
 
 export function BlogListing({ onBack, onViewPost }: BlogListingProps) {
-  const [searchQuery, setSearchQuery] = useState("")
-  const [selectedCategory, setSelectedCategory] = useState("all")
-  const [selectedTag, setSelectedTag] = useState<string | null>(null)
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
   // Filter posts based on search query, category, and tag
   const filteredPosts = mockBlogPosts.filter((post) => {
     const matchesSearch =
       searchQuery === "" ||
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
+      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
 
-    const matchesCategory = selectedCategory === "all" || post.category === selectedCategory
+    const matchesCategory =
+      selectedCategory === "all" || post.category === selectedCategory;
 
-    const matchesTag = selectedTag === null || post.tags.includes(selectedTag)
+    const matchesTag = selectedTag === null || post.tags.includes(selectedTag);
 
-    return matchesSearch && matchesCategory && matchesTag
-  })
+    return matchesSearch && matchesCategory && matchesTag;
+  });
 
   // Featured posts (first 3 posts)
-  const featuredPosts = mockBlogPosts.slice(0, 3)
+  const featuredPosts = mockBlogPosts.slice(0, 3);
 
   // Handle tag selection
   const handleTagClick = (tag: string) => {
     if (selectedTag === tag) {
-      setSelectedTag(null)
+      setSelectedTag(null);
     } else {
-      setSelectedTag(tag)
-      setSelectedCategory("all")
+      setSelectedTag(tag);
+      setSelectedCategory("all");
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -82,7 +98,9 @@ export function BlogListing({ onBack, onViewPost }: BlogListingProps) {
             )}
             <div className="flex items-center gap-2">
               <Shield className="h-6 w-6 text-blue-600" />
-              <span className="text-xl font-bold text-slate-800">OlaAI.com</span>
+              <span className="text-xl font-bold text-slate-800">
+                OlaAI.com
+              </span>
             </div>
           </div>
           <div className="hidden md:flex items-center gap-4">
@@ -96,9 +114,12 @@ export function BlogListing({ onBack, onViewPost }: BlogListingProps) {
       <div className="container mx-auto px-4 py-12">
         {/* Blog Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">OLA.AI Blog</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+            OLAAI Blog
+          </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Insights on fact-checking, misinformation trends, and updates from our research team.
+            Insights on fact-checking, misinformation trends, and updates from
+            our research team.
           </p>
         </div>
 
@@ -107,14 +128,19 @@ export function BlogListing({ onBack, onViewPost }: BlogListingProps) {
           <h2 className="text-2xl font-bold mb-8">Featured Articles</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {featuredPosts.map((post) => (
-              <Card key={post.slug} className="overflow-hidden hover:shadow-lg transition-shadow">
+              <Card
+                key={post.slug}
+                className="overflow-hidden hover:shadow-lg transition-shadow"
+              >
                 <div className="aspect-video bg-slate-200 relative overflow-hidden">
                   <img
                     src={post.coverImage || "/placeholder.svg"}
                     alt={post.title}
                     className="w-full h-full object-cover transition-transform hover:scale-105"
                   />
-                  <Badge className="absolute top-4 left-4">{post.category}</Badge>
+                  <Badge className="absolute top-4 left-4">
+                    {post.category}
+                  </Badge>
                 </div>
                 <CardHeader className="p-6">
                   <div className="flex items-center gap-2 text-sm text-slate-600 mb-2">
@@ -124,13 +150,18 @@ export function BlogListing({ onBack, onViewPost }: BlogListingProps) {
                     <Clock className="h-4 w-4" />
                     <span>{post.readTime} min read</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-2 line-clamp-2">{post.title}</h3>
+                  <h3 className="text-xl font-bold mb-2 line-clamp-2">
+                    {post.title}
+                  </h3>
                   <p className="text-slate-600 line-clamp-3">{post.excerpt}</p>
                 </CardHeader>
                 <CardFooter className="p-6 pt-0 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Avatar className="h-8 w-8">
-                      <AvatarImage src={post.author.avatar || "/placeholder.svg"} alt={post.author.name} />
+                      <AvatarImage
+                        src={post.author.avatar || "/placeholder.svg"}
+                        alt={post.author.name}
+                      />
                       <AvatarFallback>
                         {post.author.name
                           .split(" ")
@@ -138,9 +169,15 @@ export function BlogListing({ onBack, onViewPost }: BlogListingProps) {
                           .join("")}
                       </AvatarFallback>
                     </Avatar>
-                    <span className="text-sm font-medium">{post.author.name}</span>
+                    <span className="text-sm font-medium">
+                      {post.author.name}
+                    </span>
                   </div>
-                  <Button variant="ghost" size="sm" onClick={() => onViewPost(post.slug)}>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => onViewPost(post.slug)}
+                  >
                     Read More
                     <ChevronRight className="h-4 w-4 ml-1" />
                   </Button>
@@ -190,7 +227,12 @@ export function BlogListing({ onBack, onViewPost }: BlogListingProps) {
         </div>
 
         {/* Categories Tabs */}
-        <Tabs defaultValue="all" value={selectedCategory} onValueChange={setSelectedCategory} className="mb-8">
+        <Tabs
+          defaultValue="all"
+          value={selectedCategory}
+          onValueChange={setSelectedCategory}
+          className="mb-8"
+        >
           <TabsList className="grid grid-cols-2 md:grid-cols-5 mb-8">
             {categories.map((category) => (
               <TabsTrigger key={category.id} value={category.id}>
@@ -204,18 +246,24 @@ export function BlogListing({ onBack, onViewPost }: BlogListingProps) {
               {/* All Posts Grid */}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredPosts.map((post) => (
-                  <BlogPostCard key={post.slug} post={post} onViewPost={onViewPost} />
+                  <BlogPostCard
+                    key={post.slug}
+                    post={post}
+                    onViewPost={onViewPost}
+                  />
                 ))}
               </div>
 
               {filteredPosts.length === 0 && (
                 <div className="text-center py-12">
-                  <p className="text-slate-600 mb-4">No articles found matching your criteria.</p>
+                  <p className="text-slate-600 mb-4">
+                    No articles found matching your criteria.
+                  </p>
                   <Button
                     onClick={() => {
-                      setSearchQuery("")
-                      setSelectedCategory("all")
-                      setSelectedTag(null)
+                      setSearchQuery("");
+                      setSelectedCategory("all");
+                      setSelectedTag(null);
                     }}
                   >
                     Clear Filters
@@ -261,7 +309,8 @@ export function BlogListing({ onBack, onViewPost }: BlogListingProps) {
                 <div>
                   <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
                   <p className="text-slate-600 mb-4">
-                    Subscribe to our newsletter for the latest research insights and fact-checking tips.
+                    Subscribe to our newsletter for the latest research insights
+                    and fact-checking tips.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -274,5 +323,5 @@ export function BlogListing({ onBack, onViewPost }: BlogListingProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,15 +1,25 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { ArrowLeft, Settings, Crown, BarChart3, Shield, Bell, HelpCircle, LogOut, ChevronRight } from "lucide-react"
-import { MobileBottomNav } from "../components/mobile-bottom-nav"
-import type { MobileScreen } from "../mobile-app"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  ArrowLeft,
+  Settings,
+  Crown,
+  BarChart3,
+  Shield,
+  Bell,
+  HelpCircle,
+  LogOut,
+  ChevronRight,
+} from "lucide-react";
+import { MobileBottomNav } from "../components/mobile-bottom-nav";
+import type { MobileScreen } from "../mobile-app";
 
 interface MobileProfileProps {
-  onNavigate: (screen: MobileScreen) => void
+  onNavigate: (screen: MobileScreen) => void;
 }
 
 const mockUser = {
@@ -20,7 +30,7 @@ const mockUser = {
   factChecksCount: 127,
   accuracyScore: 94,
   joinDate: "2024-01-15",
-}
+};
 
 const menuItems = [
   { icon: Settings, label: "Settings", action: "settings" },
@@ -29,26 +39,26 @@ const menuItems = [
   { icon: Crown, label: "Upgrade Plan", action: "upgrade" },
   { icon: HelpCircle, label: "Help & Support", action: "help" },
   { icon: LogOut, label: "Sign Out", action: "signout" },
-]
+];
 
 export function MobileProfile({ onNavigate }: MobileProfileProps) {
   const handleMenuAction = (action: string) => {
     if (action === "settings") {
-      onNavigate("settings")
+      onNavigate("settings");
     }
     // Handle other actions
-  }
+  };
 
   const getPlanColor = (plan: string) => {
     switch (plan) {
       case "pro":
-        return "bg-blue-100 text-blue-800"
+        return "bg-blue-100 text-blue-800";
       case "enterprise":
-        return "bg-purple-100 text-purple-800"
+        return "bg-purple-100 text-purple-800";
       default:
-        return "bg-gray-100 text-gray-800"
+        return "bg-gray-100 text-gray-800";
     }
-  }
+  };
 
   return (
     <div className="h-full flex flex-col">
@@ -67,7 +77,10 @@ export function MobileProfile({ onNavigate }: MobileProfileProps) {
           <Card>
             <CardContent className="p-6 text-center">
               <Avatar className="h-20 w-20 mx-auto mb-4">
-                <AvatarImage src={mockUser.avatar || "/placeholder.svg"} alt={mockUser.name} />
+                <AvatarImage
+                  src={mockUser.avatar || "/placeholder.svg"}
+                  alt={mockUser.name}
+                />
                 <AvatarFallback className="text-xl">
                   {mockUser.name
                     .split(" ")
@@ -90,19 +103,25 @@ export function MobileProfile({ onNavigate }: MobileProfileProps) {
           <div className="grid grid-cols-3 gap-4 mb-6">
             <Card className="text-center">
               <CardContent className="p-4">
-                <div className="text-2xl font-bold text-blue-600 mb-1">{mockUser.factChecksCount}</div>
+                <div className="text-2xl font-bold text-blue-600 mb-1">
+                  {mockUser.factChecksCount}
+                </div>
                 <div className="text-xs text-slate-600">Fact Checks</div>
               </CardContent>
             </Card>
             <Card className="text-center">
               <CardContent className="p-4">
-                <div className="text-2xl font-bold text-green-600 mb-1">{mockUser.accuracyScore}%</div>
+                <div className="text-2xl font-bold text-green-600 mb-1">
+                  {mockUser.accuracyScore}%
+                </div>
                 <div className="text-xs text-slate-600">Accuracy</div>
               </CardContent>
             </Card>
             <Card className="text-center">
               <CardContent className="p-4">
-                <div className="text-2xl font-bold text-purple-600 mb-1">12</div>
+                <div className="text-2xl font-bold text-purple-600 mb-1">
+                  12
+                </div>
                 <div className="text-xs text-slate-600">This Week</div>
               </CardContent>
             </Card>
@@ -113,7 +132,10 @@ export function MobileProfile({ onNavigate }: MobileProfileProps) {
             {menuItems.map((item, index) => (
               <Card key={index} className="cursor-pointer hover:bg-slate-50">
                 <CardContent className="p-4">
-                  <div className="flex items-center justify-between" onClick={() => handleMenuAction(item.action)}>
+                  <div
+                    className="flex items-center justify-between"
+                    onClick={() => handleMenuAction(item.action)}
+                  >
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-slate-100 rounded-lg">
                         <item.icon className="h-4 w-4 text-slate-600" />
@@ -131,10 +153,12 @@ export function MobileProfile({ onNavigate }: MobileProfileProps) {
           <div className="mt-8 text-center">
             <div className="flex items-center justify-center gap-2 mb-2">
               <Shield className="h-4 w-4 text-blue-600" />
-              <span className="text-sm font-medium">OLA.AI</span>
+              <span className="text-sm font-medium">OLAAI</span>
             </div>
             <p className="text-xs text-slate-500">Version 1.0.0</p>
-            <p className="text-xs text-slate-500">Member since {new Date(mockUser.joinDate).toLocaleDateString()}</p>
+            <p className="text-xs text-slate-500">
+              Member since {new Date(mockUser.joinDate).toLocaleDateString()}
+            </p>
           </div>
         </div>
       </div>
@@ -142,5 +166,5 @@ export function MobileProfile({ onNavigate }: MobileProfileProps) {
       {/* Bottom Navigation */}
       <MobileBottomNav currentScreen="profile" onNavigate={onNavigate} />
     </div>
-  )
+  );
 }

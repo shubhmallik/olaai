@@ -1,4 +1,4 @@
-import type { BlogPost } from "@/types/blog"
+import type { BlogPost } from "@/types/blog";
 
 // Mock authors
 const authors = {
@@ -6,27 +6,27 @@ const authors = {
     name: "Dr. Sarah Chen",
     role: "CEO & Co-Founder",
     avatar: "/placeholder.svg?height=80&width=80",
-    bio: "Dr. Sarah Chen is the CEO and Co-Founder of OLA.AI. With a PhD in Computer Science from Stanford, she has over 10 years of experience in AI and machine learning, specializing in natural language processing and misinformation detection.",
+    bio: "Dr. Sarah Chen is the CEO and Co-Founder of OLAAI. With a PhD in Computer Science from Stanford, she has over 10 years of experience in AI and machine learning, specializing in natural language processing and misinformation detection.",
   },
   marcus: {
     name: "Marcus Rodriguez",
     role: "CTO & Co-Founder",
     avatar: "/placeholder.svg?height=80&width=80",
-    bio: "Marcus Rodriguez is the CTO and Co-Founder of OLA.AI. Previously an engineering leader at Google, he specializes in building scalable AI systems and real-time data processing pipelines.",
+    bio: "Marcus Rodriguez is the CTO and Co-Founder of OLAAI. Previously an engineering leader at Google, he specializes in building scalable AI systems and real-time data processing pipelines.",
   },
   aisha: {
     name: "Dr. Aisha Patel",
     role: "Head of AI Research",
     avatar: "/placeholder.svg?height=80&width=80",
-    bio: "Dr. Aisha Patel leads the AI research team at OLA.AI. With a PhD in Computational Linguistics, she has published numerous papers on fact-checking algorithms and misinformation detection.",
+    bio: "Dr. Aisha Patel leads the AI research team at OLAAI. With a PhD in Computational Linguistics, she has published numerous papers on fact-checking algorithms and misinformation detection.",
   },
   james: {
     name: "James Thompson",
     role: "Head of Product",
     avatar: "/placeholder.svg?height=80&width=80",
-    bio: "James Thompson is the Head of Product at OLA.AI. A former journalist, he brings a unique perspective to our product development, focusing on user experience and practical applications of fact-checking technology.",
+    bio: "James Thompson is the Head of Product at OLAAI. A former journalist, he brings a unique perspective to our product development, focusing on user experience and practical applications of fact-checking technology.",
   },
-}
+};
 
 // Mock blog posts
 export const mockBlogPosts: BlogPost[] = [
@@ -36,7 +36,8 @@ export const mockBlogPosts: BlogPost[] = [
     excerpt:
       "Our analysis of millions of fact-checks reveals emerging patterns in how misinformation spreads across platforms and demographics.",
     content: "Full content would go here...",
-    coverImage: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    coverImage:
+      "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "May 28, 2024",
     author: authors.sarah,
     category: "research",
@@ -49,7 +50,8 @@ export const mockBlogPosts: BlogPost[] = [
     excerpt:
       "Exploring the ethical considerations and responsibilities when deploying AI systems for fact-checking at scale.",
     content: "Full content would go here...",
-    coverImage: "https://images.pexels.com/photos/8438958/pexels-photo-8438958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    coverImage:
+      "https://images.pexels.com/photos/8438958/pexels-photo-8438958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "May 20, 2024",
     author: authors.aisha,
     category: "research",
@@ -58,11 +60,12 @@ export const mockBlogPosts: BlogPost[] = [
   },
   {
     slug: "introducing-ola-api",
-    title: "Introducing the OLA.AI API: Fact-Checking for Developers",
+    title: "Introducing the OLAAI API: Fact-Checking for Developers",
     excerpt:
       "We're excited to announce our new API that allows developers to integrate our fact-checking technology into their applications.",
     content: "Full content would go here...",
-    coverImage: "https://images.pexels.com/photos/7988079/pexels-photo-7988079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    coverImage:
+      "https://images.pexels.com/photos/7988079/pexels-photo-7988079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "May 15, 2024",
     author: authors.marcus,
     category: "company",
@@ -75,19 +78,27 @@ export const mockBlogPosts: BlogPost[] = [
     excerpt:
       "How our new computer vision models can identify manipulated images and videos with unprecedented accuracy.",
     content: "Full content would go here...",
-    coverImage: "https://images.pexels.com/photos/8875643/pexels-photo-8875643.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    coverImage:
+      "https://images.pexels.com/photos/8875643/pexels-photo-8875643.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "May 10, 2024",
     author: authors.aisha,
     category: "research",
-    tags: ["Computer Vision", "Research", "Technology", "Visual Misinformation"],
+    tags: [
+      "Computer Vision",
+      "Research",
+      "Technology",
+      "Visual Misinformation",
+    ],
     readTime: 10,
   },
   {
     slug: "media-literacy-schools",
-    title: "OLA.AI Partners with Schools to Promote Media Literacy",
-    excerpt: "Our new educational initiative aims to teach students how to critically evaluate online information.",
+    title: "OLAAI Partners with Schools to Promote Media Literacy",
+    excerpt:
+      "Our new educational initiative aims to teach students how to critically evaluate online information.",
     content: "Full content would go here...",
-    coverImage: "https://images.pexels.com/photos/7596913/pexels-photo-7596913.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    coverImage:
+      "https://images.pexels.com/photos/7596913/pexels-photo-7596913.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "May 5, 2024",
     author: authors.james,
     category: "company",
@@ -100,7 +111,8 @@ export const mockBlogPosts: BlogPost[] = [
     excerpt:
       "How we're ramping up our systems to handle the increased demand for fact-checking during election periods.",
     content: "Full content would go here...",
-    coverImage: "https://images.pexels.com/photos/4669113/pexels-photo-4669113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    coverImage:
+      "https://images.pexels.com/photos/4669113/pexels-photo-4669113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "April 28, 2024",
     author: authors.marcus,
     category: "industry",
@@ -113,7 +125,8 @@ export const mockBlogPosts: BlogPost[] = [
     excerpt:
       "Our research team's findings on how health misinformation affects decision-making and public health outcomes.",
     content: "Full content would go here...",
-    coverImage: "https://images.pexels.com/photos/7715269/pexels-photo-7715269.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    coverImage:
+      "https://images.pexels.com/photos/7715269/pexels-photo-7715269.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "April 22, 2024",
     author: authors.sarah,
     category: "research",
@@ -124,9 +137,10 @@ export const mockBlogPosts: BlogPost[] = [
     slug: "fact-checking-workflow-guide",
     title: "A Step-by-Step Guide to Efficient Fact-Checking Workflows",
     excerpt:
-      "Practical tips for journalists and researchers on how to streamline their fact-checking process using OLA.AI.",
+      "Practical tips for journalists and researchers on how to streamline their fact-checking process using OLAAI.",
     content: "Full content would go here...",
-    coverImage: "https://images.pexels.com/photos/9035000/pexels-photo-9035000.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    coverImage:
+      "https://images.pexels.com/photos/9035000/pexels-photo-9035000.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "April 15, 2024",
     author: authors.james,
     category: "tutorials",
@@ -135,11 +149,12 @@ export const mockBlogPosts: BlogPost[] = [
   },
   {
     slug: "series-b-funding-announcement",
-    title: "OLA.AI Secures $15M in Series B Funding to Expand Global Reach",
+    title: "OLAAI Secures $15M in Series B Funding to Expand Global Reach",
     excerpt:
       "We're thrilled to announce our Series B funding round, led by Tech Ventures, to accelerate our international expansion.",
     content: "Full content would go here...",
-    coverImage: "https://images.pexels.com/photos/5912588/pexels-photo-5912588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    coverImage:
+      "https://images.pexels.com/photos/5912588/pexels-photo-5912588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "April 10, 2024",
     author: authors.sarah,
     category: "company",
@@ -149,9 +164,11 @@ export const mockBlogPosts: BlogPost[] = [
   {
     slug: "multilingual-fact-checking",
     title: "Breaking Language Barriers: Multilingual Fact-Checking at Scale",
-    excerpt: "How our new language models enable accurate fact-checking across 25+ languages and cultural contexts.",
+    excerpt:
+      "How our new language models enable accurate fact-checking across 25+ languages and cultural contexts.",
     content: "Full content would go here...",
-    coverImage: "https://images.pexels.com/photos/30917907/pexels-photo-30917907/free-photo-of-scrabble-tiles-forming-words-guide-and-news.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    coverImage:
+      "https://images.pexels.com/photos/30917907/pexels-photo-30917907/free-photo-of-scrabble-tiles-forming-words-guide-and-news.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "April 5, 2024",
     author: authors.aisha,
     category: "research",
@@ -161,9 +178,11 @@ export const mockBlogPosts: BlogPost[] = [
   {
     slug: "misinformation-psychology",
     title: "The Psychology of Misinformation: Why We Believe False Claims",
-    excerpt: "Understanding the cognitive biases and psychological factors that make us susceptible to misinformation.",
+    excerpt:
+      "Understanding the cognitive biases and psychological factors that make us susceptible to misinformation.",
     content: "Full content would go here...",
-    coverImage: "https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    coverImage:
+      "https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "March 28, 2024",
     author: authors.james,
     category: "industry",
@@ -172,15 +191,16 @@ export const mockBlogPosts: BlogPost[] = [
   },
   {
     slug: "fact-checking-api-tutorial",
-    title: "How to Integrate the OLA.AI Fact-Checking API in Your Application",
+    title: "How to Integrate the OLAAI Fact-Checking API in Your Application",
     excerpt:
       "A technical tutorial on implementing our API to add real-time fact-checking capabilities to your platform.",
     content: "Full content would go here...",
-    coverImage: "https://images.pexels.com/photos/10816120/pexels-photo-10816120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    coverImage:
+      "https://images.pexels.com/photos/10816120/pexels-photo-10816120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "March 20, 2024",
     author: authors.marcus,
     category: "tutorials",
     tags: ["API", "Developers", "Tutorial", "Integration"],
     readTime: 15,
   },
-]
+];

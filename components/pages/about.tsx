@@ -63,7 +63,7 @@ const milestones = [
   {
     year: "2022",
     title: "Company Founded",
-    description: "OLA.AI was founded with a mission to democratize fact-checking through AI.",
+    description: "OLAAI was founded with a mission to democratize fact-checking through AI.",
   },
   {
     year: "2023",
@@ -140,7 +140,7 @@ export function About({ onBack }: AboutProps) {
       <div className="container mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">About OLA.AI</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">About OLAAI</h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
             We're on a mission to democratize fact-checking and combat misinformation through cutting-edge AI technology
             that's accessible to everyone.
@@ -400,7 +400,7 @@ export function About({ onBack }: AboutProps) {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" onClick={onBack}>
-                  Try OLA.AI
+                  Try OLAAI
                 </Button>
                 <Button variant="outline" size="lg">
                   <Mail className="h-4 w-4 mr-2" />
