@@ -66,9 +66,14 @@ export function BlogPostDetail({
             </Button>
             <div className="flex items-center gap-2">
               <Shield className="h-6 w-6 text-blue-600" />
-              <span className="text-xl font-bold text-slate-800">
-                OlaAI.com
-              </span>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-slate-800">
+                  OlaAI.com
+                </span>
+                <span className="text-sm  text-slate-800">
+                  Online Lie Analyser
+                </span>
+              </div>
             </div>
           </div>
           <div className="hidden md:flex items-center gap-4">
@@ -143,7 +148,7 @@ export function BlogPostDetail({
             </p>
 
             <p>
-              At OLAAI, we're committed to combating this problem through
+              At OlaAI, we're committed to combating this problem through
               advanced artificial intelligence and machine learning techniques.
               Our research team continuously works to improve our fact-checking
               algorithms and develop new methods for detecting misinformation.

@@ -98,9 +98,14 @@ export function BlogListing({ onBack, onViewPost }: BlogListingProps) {
             )}
             <div className="flex items-center gap-2">
               <Shield className="h-6 w-6 text-blue-600" />
-              <span className="text-xl font-bold text-slate-800">
-                OlaAI.com
-              </span>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-slate-800">
+                  OlaAI.com
+                </span>
+                <span className="text-sm  text-slate-800">
+                  Online Lie Analyser
+                </span>
+              </div>
             </div>
           </div>
           <div className="hidden md:flex items-center gap-4">
@@ -115,7 +120,7 @@ export function BlogListing({ onBack, onViewPost }: BlogListingProps) {
         {/* Blog Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-            OLAAI Blog
+            OlaAI Blog
           </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Insights on fact-checking, misinformation trends, and updates from

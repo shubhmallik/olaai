@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Progress } from "@/components/ui/progress"
-import { Separator } from "@/components/ui/separator"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
+import { Separator } from "@/components/ui/separator";
 import {
   ArrowLeft,
   ThumbsUp,
@@ -18,11 +18,11 @@ import {
   AlertTriangle,
   CheckCircle,
   XCircle,
-} from "lucide-react"
+} from "lucide-react";
 
 interface ResultsPageProps {
-  query: string
-  onBack: () => void
+  query: string;
+  onBack: () => void;
 }
 
 const mockResult = {
@@ -62,41 +62,41 @@ const mockResult = {
       relevance: 88,
     },
   ],
-}
+};
 
 export function ResultsPage({ query, onBack }: ResultsPageProps) {
-  const [showTechnicalDetails, setShowTechnicalDetails] = useState(false)
-  const [userFeedback, setUserFeedback] = useState<"up" | "down" | null>(null)
+  const [showTechnicalDetails, setShowTechnicalDetails] = useState(false);
+  const [userFeedback, setUserFeedback] = useState<"up" | "down" | null>(null);
 
   const getVerdictColor = (verdict: string) => {
     switch (verdict) {
       case "TRUE":
-        return "text-green-700 bg-green-50 border-green-200"
+        return "text-green-700 bg-green-50 border-green-200";
       case "FALSE":
-        return "text-red-700 bg-red-50 border-red-200"
+        return "text-red-700 bg-red-50 border-red-200";
       case "MISLEADING":
-        return "text-yellow-700 bg-yellow-50 border-yellow-200"
+        return "text-yellow-700 bg-yellow-50 border-yellow-200";
       case "UNVERIFIABLE":
-        return "text-gray-700 bg-gray-50 border-gray-200"
+        return "text-gray-700 bg-gray-50 border-gray-200";
       default:
-        return "text-gray-700 bg-gray-50 border-gray-200"
+        return "text-gray-700 bg-gray-50 border-gray-200";
     }
-  }
+  };
 
   const getVerdictIcon = (verdict: string) => {
     switch (verdict) {
       case "TRUE":
-        return <CheckCircle className="h-6 w-6" />
+        return <CheckCircle className="h-6 w-6" />;
       case "FALSE":
-        return <XCircle className="h-6 w-6" />
+        return <XCircle className="h-6 w-6" />;
       case "MISLEADING":
-        return <AlertTriangle className="h-6 w-6" />
+        return <AlertTriangle className="h-6 w-6" />;
       case "UNVERIFIABLE":
-        return <Info className="h-6 w-6" />
+        return <Info className="h-6 w-6" />;
       default:
-        return <Info className="h-6 w-6" />
+        return <Info className="h-6 w-6" />;
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -110,7 +110,14 @@ export function ResultsPage({ query, onBack }: ResultsPageProps) {
             </Button>
             <div className="flex items-center gap-2">
               <Shield className="h-6 w-6 text-blue-600" />
-              <span className="text-xl font-bold text-slate-800">OlaAI.com</span>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-slate-800">
+                  OlaAI.com
+                </span>
+                <span className="text-sm  text-slate-800">
+                  Online Lie Analyser
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -120,7 +127,9 @@ export function ResultsPage({ query, onBack }: ResultsPageProps) {
         {/* Query Display */}
         <Card className="mb-8">
           <CardContent className="p-6">
-            <h2 className="text-lg font-medium text-slate-600 mb-2">Fact-checking claim:</h2>
+            <h2 className="text-lg font-medium text-slate-600 mb-2">
+              Fact-checking claim:
+            </h2>
             <p className="text-xl text-slate-800 font-medium">"{query}"</p>
           </CardContent>
         </Card>
@@ -140,12 +149,17 @@ export function ResultsPage({ query, onBack }: ResultsPageProps) {
                 {/* Confidence Meter */}
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">Confidence Score</span>
-                    <span className="text-sm font-bold">{mockResult.confidence}%</span>
+                    <span className="text-sm font-medium">
+                      Confidence Score
+                    </span>
+                    <span className="text-sm font-bold">
+                      {mockResult.confidence}%
+                    </span>
                   </div>
                   <Progress value={mockResult.confidence} className="h-3" />
                   <p className="text-xs text-slate-600">
-                    Based on source credibility, claim specificity, and evidence strength
+                    Based on source credibility, claim specificity, and evidence
+                    strength
                   </p>
                 </div>
               </CardContent>
@@ -161,10 +175,15 @@ export function ResultsPage({ query, onBack }: ResultsPageProps) {
               </CardHeader>
               <CardContent className="space-y-6">
                 {mockResult.sources.map((source, index) => (
-                  <div key={index} className="border rounded-lg p-4 hover:bg-slate-50 transition-colors">
+                  <div
+                    key={index}
+                    className="border rounded-lg p-4 hover:bg-slate-50 transition-colors"
+                  >
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex-1">
-                        <h4 className="font-semibold text-slate-800 mb-1">{source.title}</h4>
+                        <h4 className="font-semibold text-slate-800 mb-1">
+                          {source.title}
+                        </h4>
                         <div className="flex items-center gap-3 text-sm text-slate-600">
                           <span className="font-medium">{source.outlet}</span>
                           <Badge variant="outline" className="text-xs">
@@ -242,7 +261,9 @@ export function ResultsPage({ query, onBack }: ResultsPageProps) {
             {/* Feedback */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Was this verdict accurate?</CardTitle>
+                <CardTitle className="text-lg">
+                  Was this verdict accurate?
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex gap-3">
@@ -267,7 +288,8 @@ export function ResultsPage({ query, onBack }: ResultsPageProps) {
                 </div>
                 {userFeedback && (
                   <p className="text-sm text-slate-600 mt-3">
-                    Thank you for your feedback! This helps improve our accuracy.
+                    Thank you for your feedback! This helps improve our
+                    accuracy.
                   </p>
                 )}
               </CardContent>
@@ -312,15 +334,27 @@ export function ResultsPage({ query, onBack }: ResultsPageProps) {
                 <CardTitle className="text-lg">Quick Actions</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Button variant="outline" size="sm" className="w-full justify-start">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full justify-start"
+                >
                   <ExternalLink className="h-4 w-4 mr-2" />
                   Share Results
                 </Button>
-                <Button variant="outline" size="sm" className="w-full justify-start">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full justify-start"
+                >
                   <Shield className="h-4 w-4 mr-2" />
                   Report Issue
                 </Button>
-                <Button variant="outline" size="sm" className="w-full justify-start">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full justify-start"
+                >
                   <Info className="h-4 w-4 mr-2" />
                   Learn More
                 </Button>
@@ -330,5 +364,5 @@ export function ResultsPage({ query, onBack }: ResultsPageProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

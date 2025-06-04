@@ -1,61 +1,70 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Separator } from "@/components/ui/separator"
-import { ArrowLeft, Camera, Crown, Calendar, Mail, User, Shield, BarChart3 } from "lucide-react"
-import { useAuth } from "@/contexts/auth-context"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Separator } from "@/components/ui/separator";
+import {
+  ArrowLeft,
+  Camera,
+  Crown,
+  Calendar,
+  Mail,
+  User,
+  Shield,
+  BarChart3,
+} from "lucide-react";
+import { useAuth } from "@/contexts/auth-context";
 
 interface UserProfileProps {
-  onBack?: () => void
+  onBack?: () => void;
 }
 
 export function UserProfile({ onBack }: UserProfileProps) {
-  const { user, updateProfile, isLoading } = useAuth()
-  const [isEditing, setIsEditing] = useState(false)
+  const { user, updateProfile, isLoading } = useAuth();
+  const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
     name: user?.name || "",
     email: user?.email || "",
-  })
-  const [message, setMessage] = useState("")
+  });
+  const [message, setMessage] = useState("");
 
-  if (!user) return null
+  if (!user) return null;
 
   const handleSave = async () => {
-    const result = await updateProfile(formData)
+    const result = await updateProfile(formData);
     if (result.success) {
-      setMessage("Profile updated successfully!")
-      setIsEditing(false)
-      setTimeout(() => setMessage(""), 3000)
+      setMessage("Profile updated successfully!");
+      setIsEditing(false);
+      setTimeout(() => setMessage(""), 3000);
     } else {
-      setMessage(result.error || "Failed to update profile")
+      setMessage(result.error || "Failed to update profile");
     }
-  }
+  };
 
   const getInitials = (name: string) => {
     return name
       .split(" ")
       .map((n) => n[0])
       .join("")
-      .toUpperCase()
-  }
+      .toUpperCase();
+  };
 
   const getPlanColor = (plan: string) => {
     switch (plan) {
       case "pro":
-        return "bg-blue-100 text-blue-800 border-blue-200"
+        return "bg-blue-100 text-blue-800 border-blue-200";
       case "enterprise":
-        return "bg-purple-100 text-purple-800 border-purple-200"
+        return "bg-purple-100 text-purple-800 border-purple-200";
       default:
-        return "bg-gray-100 text-gray-800 border-gray-200"
+        return "bg-gray-100 text-gray-800 border-gray-200";
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -69,7 +78,14 @@ export function UserProfile({ onBack }: UserProfileProps) {
           )}
           <div className="flex items-center gap-2">
             <Shield className="h-6 w-6 text-blue-600" />
-            <span className="text-xl font-bold text-slate-800">OlaAI.com</span>
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold text-slate-800">
+                OlaAI.com
+              </span>
+              <span className="text-sm  text-slate-800">
+                Online Lie Analyser
+              </span>
+            </div>
           </div>
         </div>
       </header>
@@ -82,10 +98,18 @@ export function UserProfile({ onBack }: UserProfileProps) {
               <CardContent className="p-6 text-center">
                 <div className="relative inline-block mb-4">
                   <Avatar className="h-24 w-24">
-                    <AvatarImage src={user.avatar || "/placeholder.svg"} alt={user.name} />
-                    <AvatarFallback className="text-2xl">{getInitials(user.name)}</AvatarFallback>
+                    <AvatarImage
+                      src={user.avatar || "/placeholder.svg"}
+                      alt={user.name}
+                    />
+                    <AvatarFallback className="text-2xl">
+                      {getInitials(user.name)}
+                    </AvatarFallback>
                   </Avatar>
-                  <Button size="sm" className="absolute -bottom-2 -right-2 h-8 w-8 rounded-full p-0">
+                  <Button
+                    size="sm"
+                    className="absolute -bottom-2 -right-2 h-8 w-8 rounded-full p-0"
+                  >
                     <Camera className="h-4 w-4" />
                   </Button>
                 </div>
@@ -103,7 +127,9 @@ export function UserProfile({ onBack }: UserProfileProps) {
                 <div className="space-y-4 text-left">
                   <div className="flex items-center gap-3 text-sm">
                     <Calendar className="h-4 w-4 text-slate-400" />
-                    <span>Joined {new Date(user.joinDate).toLocaleDateString()}</span>
+                    <span>
+                      Joined {new Date(user.joinDate).toLocaleDateString()}
+                    </span>
                   </div>
                   <div className="flex items-center gap-3 text-sm">
                     <BarChart3 className="h-4 w-4 text-slate-400" />
@@ -127,9 +153,9 @@ export function UserProfile({ onBack }: UserProfileProps) {
                   variant={isEditing ? "outline" : "default"}
                   onClick={() => {
                     if (isEditing) {
-                      setFormData({ name: user.name, email: user.email })
+                      setFormData({ name: user.name, email: user.email });
                     }
-                    setIsEditing(!isEditing)
+                    setIsEditing(!isEditing);
                   }}
                 >
                   {isEditing ? "Cancel" : "Edit Profile"}
@@ -151,7 +177,12 @@ export function UserProfile({ onBack }: UserProfileProps) {
                         <Input
                           id="name"
                           value={formData.name}
-                          onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
+                          onChange={(e) =>
+                            setFormData((prev) => ({
+                              ...prev,
+                              name: e.target.value,
+                            }))
+                          }
                           className="pl-10"
                         />
                       </div>
@@ -169,7 +200,12 @@ export function UserProfile({ onBack }: UserProfileProps) {
                           id="email"
                           type="email"
                           value={formData.email}
-                          onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
+                          onChange={(e) =>
+                            setFormData((prev) => ({
+                              ...prev,
+                              email: e.target.value,
+                            }))
+                          }
                           className="pl-10"
                         />
                       </div>
@@ -184,7 +220,10 @@ export function UserProfile({ onBack }: UserProfileProps) {
                     <Button onClick={handleSave} disabled={isLoading}>
                       {isLoading ? "Saving..." : "Save Changes"}
                     </Button>
-                    <Button variant="outline" onClick={() => setIsEditing(false)}>
+                    <Button
+                      variant="outline"
+                      onClick={() => setIsEditing(false)}
+                    >
                       Cancel
                     </Button>
                   </div>
@@ -200,11 +239,15 @@ export function UserProfile({ onBack }: UserProfileProps) {
               <CardContent>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-600">{user.factChecksCount}</div>
+                    <div className="text-3xl font-bold text-blue-600">
+                      {user.factChecksCount}
+                    </div>
                     <div className="text-sm text-slate-600">Total Checks</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-green-600">{user.accuracyScore}%</div>
+                    <div className="text-3xl font-bold text-green-600">
+                      {user.accuracyScore}%
+                    </div>
                     <div className="text-sm text-slate-600">Accuracy</div>
                   </div>
                   <div className="text-center">
@@ -212,7 +255,9 @@ export function UserProfile({ onBack }: UserProfileProps) {
                     <div className="text-sm text-slate-600">This Week</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-orange-600">4.8</div>
+                    <div className="text-3xl font-bold text-orange-600">
+                      4.8
+                    </div>
                     <div className="text-sm text-slate-600">Avg Rating</div>
                   </div>
                 </div>
@@ -228,13 +273,20 @@ export function UserProfile({ onBack }: UserProfileProps) {
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="flex items-center gap-2 mb-2">
-                      {user.plan === "pro" && <Crown className="h-5 w-5 text-blue-600" />}
-                      <span className="text-lg font-semibold capitalize">{user.plan} Plan</span>
+                      {user.plan === "pro" && (
+                        <Crown className="h-5 w-5 text-blue-600" />
+                      )}
+                      <span className="text-lg font-semibold capitalize">
+                        {user.plan} Plan
+                      </span>
                     </div>
                     <p className="text-slate-600">
-                      {user.plan === "free" && "Limited to 10 fact checks per day"}
-                      {user.plan === "pro" && "Unlimited fact checks with priority support"}
-                      {user.plan === "enterprise" && "Full access with team collaboration"}
+                      {user.plan === "free" &&
+                        "Limited to 10 fact checks per day"}
+                      {user.plan === "pro" &&
+                        "Unlimited fact checks with priority support"}
+                      {user.plan === "enterprise" &&
+                        "Full access with team collaboration"}
                     </p>
                   </div>
                   {user.plan === "free" && <Button>Upgrade Plan</Button>}
@@ -245,5 +297,5 @@ export function UserProfile({ onBack }: UserProfileProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

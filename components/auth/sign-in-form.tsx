@@ -44,7 +44,7 @@ export function SignInForm({ onSuccess, onSwitchToSignUp }: SignInFormProps) {
     <Card className="w-full max-w-md">
       <CardHeader className="text-center">
         <CardTitle className="text-2xl">Welcome back</CardTitle>
-        <p className="text-slate-600">Sign in to your OLAAI account</p>
+        <p className="text-slate-600">Sign in to your OlaAI account</p>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">

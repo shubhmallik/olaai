@@ -90,12 +90,12 @@ const processSteps = [
 
 const faqData = [
   {
-    question: "How accurate is OLAAI's fact-checking?",
+    question: "How accurate is OlaAI's fact-checking?",
     answer:
       "Our AI models achieve 94% accuracy on average, validated against human fact-checkers. We continuously improve our models using user feedback and new training data.",
   },
   {
-    question: "What sources does OLAAI use for verification?",
+    question: "What sources does OlaAI use for verification?",
     answer:
       "We scan over 50 trusted sources including major news outlets (BBC, Reuters, AP), academic databases, government websites, and specialized fact-checking organizations like Snopes and PolitiFact.",
   },
@@ -105,9 +105,9 @@ const faqData = [
       "Our confidence score (0-100%) considers source credibility, claim specificity, evidence strength, and consensus across multiple sources. Higher scores indicate stronger evidence for the verdict.",
   },
   {
-    question: "Can OLAAI fact-check any type of claim?",
+    question: "Can OlaAI fact-check any type of claim?",
     answer:
-      "OLAAI works best with factual claims that can be verified against reliable sources. We handle health, science, politics, and general news claims most effectively.",
+      "OlaAI works best with factual claims that can be verified against reliable sources. We handle health, science, politics, and general news claims most effectively.",
   },
   {
     question: "How fast is the fact-checking process?",
@@ -139,9 +139,14 @@ export function HowItWorks({ onBack }: HowItWorksProps) {
             )}
             <div className="flex items-center gap-2">
               <Shield className="h-6 w-6 text-blue-600" />
-              <span className="text-xl font-bold text-slate-800">
-                OlaAI.com
-              </span>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-slate-800">
+                  OlaAI.com
+                </span>
+                <span className="text-sm  text-slate-800">
+                  Online Lie Analyser
+                </span>
+              </div>
             </div>
           </div>
           <Button onClick={() => setShowDemo(true)}>
@@ -155,7 +160,7 @@ export function HowItWorks({ onBack }: HowItWorksProps) {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-            How OLAAI Works
+            How OlaAI Works
           </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
             Discover how our AI-powered fact-checking platform verifies claims
@@ -471,12 +476,12 @@ export function HowItWorks({ onBack }: HowItWorksProps) {
                 Ready to Start Fact-Checking?
               </h3>
               <p className="text-slate-600 mb-6">
-                Join thousands of users who trust OLAAI for accurate, fast
+                Join thousands of users who trust OlaAI for accurate, fast
                 fact-checking.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" onClick={onBack}>
-                  Try OLAAI Now
+                  Try OlaAI Now
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>
                 <Button variant="outline" size="lg">
@@ -494,7 +499,7 @@ export function HowItWorks({ onBack }: HowItWorksProps) {
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <Card className="max-w-2xl w-full">
             <CardHeader className="flex flex-row items-center justify-between">
-              <CardTitle>OLAAI Demo Video</CardTitle>
+              <CardTitle>OlaAI Demo Video</CardTitle>
               <Button
                 variant="ghost"
                 size="sm"

@@ -11,7 +11,7 @@ interface MobileOnboardingProps {
 const onboardingSteps = [
   {
     icon: <Shield className="h-16 w-16 text-blue-600" />,
-    title: "Welcome to OLAAI",
+    title: "Welcome to OlaAI",
     description:
       "Your pocket fact-checker powered by AI. Verify claims instantly with trusted sources.",
     image: "/placeholder.svg?height=200&width=300",

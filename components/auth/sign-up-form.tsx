@@ -85,7 +85,7 @@ export function SignUpForm({ onSuccess, onSwitchToSignIn }: SignUpFormProps) {
     <Card className="w-full max-w-md">
       <CardHeader className="text-center">
         <CardTitle className="text-2xl">Create account</CardTitle>
-        <p className="text-slate-600">Join OLAAI to start fact-checking</p>
+        <p className="text-slate-600">Join OlaAI to start fact-checking</p>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">

@@ -93,7 +93,7 @@ export function MobileHome({
           </Button>
           <div className="flex items-center gap-2">
             <Shield className="h-6 w-6 text-blue-600" />
-            <span className="font-bold text-lg">OLAAI</span>
+            <span className="font-bold text-lg">OlaAI</span>
           </div>
         </div>
         <div className="flex items-center gap-2">

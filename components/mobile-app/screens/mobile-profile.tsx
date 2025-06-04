@@ -153,7 +153,7 @@ export function MobileProfile({ onNavigate }: MobileProfileProps) {
           <div className="mt-8 text-center">
             <div className="flex items-center justify-center gap-2 mb-2">
               <Shield className="h-4 w-4 text-blue-600" />
-              <span className="text-sm font-medium">OLAAI</span>
+              <span className="text-sm font-medium">OlaAI</span>
             </div>
             <p className="text-xs text-slate-500">Version 1.0.0</p>
             <p className="text-xs text-slate-500">

@@ -6,25 +6,25 @@ const authors = {
     name: "Dr. Sarah Chen",
     role: "CEO & Co-Founder",
     avatar: "/placeholder.svg?height=80&width=80",
-    bio: "Dr. Sarah Chen is the CEO and Co-Founder of OLAAI. With a PhD in Computer Science from Stanford, she has over 10 years of experience in AI and machine learning, specializing in natural language processing and misinformation detection.",
+    bio: "Dr. Sarah Chen is the CEO and Co-Founder of OlaAI. With a PhD in Computer Science from Stanford, she has over 10 years of experience in AI and machine learning, specializing in natural language processing and misinformation detection.",
   },
   marcus: {
     name: "Marcus Rodriguez",
     role: "CTO & Co-Founder",
     avatar: "/placeholder.svg?height=80&width=80",
-    bio: "Marcus Rodriguez is the CTO and Co-Founder of OLAAI. Previously an engineering leader at Google, he specializes in building scalable AI systems and real-time data processing pipelines.",
+    bio: "Marcus Rodriguez is the CTO and Co-Founder of OlaAI. Previously an engineering leader at Google, he specializes in building scalable AI systems and real-time data processing pipelines.",
   },
   aisha: {
     name: "Dr. Aisha Patel",
     role: "Head of AI Research",
     avatar: "/placeholder.svg?height=80&width=80",
-    bio: "Dr. Aisha Patel leads the AI research team at OLAAI. With a PhD in Computational Linguistics, she has published numerous papers on fact-checking algorithms and misinformation detection.",
+    bio: "Dr. Aisha Patel leads the AI research team at OlaAI. With a PhD in Computational Linguistics, she has published numerous papers on fact-checking algorithms and misinformation detection.",
   },
   james: {
     name: "James Thompson",
     role: "Head of Product",
     avatar: "/placeholder.svg?height=80&width=80",
-    bio: "James Thompson is the Head of Product at OLAAI. A former journalist, he brings a unique perspective to our product development, focusing on user experience and practical applications of fact-checking technology.",
+    bio: "James Thompson is the Head of Product at OlaAI. A former journalist, he brings a unique perspective to our product development, focusing on user experience and practical applications of fact-checking technology.",
   },
 };
 
@@ -60,7 +60,7 @@ export const mockBlogPosts: BlogPost[] = [
   },
   {
     slug: "introducing-ola-api",
-    title: "Introducing the OLAAI API: Fact-Checking for Developers",
+    title: "Introducing the OlaAI API: Fact-Checking for Developers",
     excerpt:
       "We're excited to announce our new API that allows developers to integrate our fact-checking technology into their applications.",
     content: "Full content would go here...",
@@ -93,7 +93,7 @@ export const mockBlogPosts: BlogPost[] = [
   },
   {
     slug: "media-literacy-schools",
-    title: "OLAAI Partners with Schools to Promote Media Literacy",
+    title: "OlaAI Partners with Schools to Promote Media Literacy",
     excerpt:
       "Our new educational initiative aims to teach students how to critically evaluate online information.",
     content: "Full content would go here...",
@@ -137,7 +137,7 @@ export const mockBlogPosts: BlogPost[] = [
     slug: "fact-checking-workflow-guide",
     title: "A Step-by-Step Guide to Efficient Fact-Checking Workflows",
     excerpt:
-      "Practical tips for journalists and researchers on how to streamline their fact-checking process using OLAAI.",
+      "Practical tips for journalists and researchers on how to streamline their fact-checking process using OlaAI.",
     content: "Full content would go here...",
     coverImage:
       "https://images.pexels.com/photos/9035000/pexels-photo-9035000.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -149,7 +149,7 @@ export const mockBlogPosts: BlogPost[] = [
   },
   {
     slug: "series-b-funding-announcement",
-    title: "OLAAI Secures $15M in Series B Funding to Expand Global Reach",
+    title: "OlaAI Secures $15M in Series B Funding to Expand Global Reach",
     excerpt:
       "We're thrilled to announce our Series B funding round, led by Tech Ventures, to accelerate our international expansion.",
     content: "Full content would go here...",
@@ -191,7 +191,7 @@ export const mockBlogPosts: BlogPost[] = [
   },
   {
     slug: "fact-checking-api-tutorial",
-    title: "How to Integrate the OLAAI Fact-Checking API in Your Application",
+    title: "How to Integrate the OlaAI Fact-Checking API in Your Application",
     excerpt:
       "A technical tutorial on implementing our API to add real-time fact-checking capabilities to your platform.",
     content: "Full content would go here...",
