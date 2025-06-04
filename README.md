@@ -8,7 +8,6 @@ This repository will stay in sync with your deployed chats on [v0.dev](https://v
 Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
 
 ## Deployment
-
 Your project is live at:
 
 **[https://vercel.com/shubhmalliks-projects/v0-olaai](https://vercel.com/shubhmalliks-projects/v0-olaai)**
@@ -16,7 +15,6 @@ Your project is live at:
 ## Build your app
 
 Continue building your app on:
-
 **[https://v0.dev/chat/projects/PzwZpFusatJ](https://v0.dev/chat/projects/PzwZpFusatJ)**
 
 ## How It Works
